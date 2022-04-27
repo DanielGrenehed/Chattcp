@@ -5,10 +5,8 @@ import javax.swing.*;
 public class ChattWindow extends JFrame {
 
     private ChattView view;
-    private Client client;
 
     public ChattWindow(Client client) {
-        this.client = client;
         view = new ChattView(client);
         add(view);
 
@@ -20,7 +18,7 @@ public class ChattWindow extends JFrame {
 
     public static void main(String[] args) {
         Client c = new Client();
-        ChattWindow window = new ChattWindow(c);
+        new ChattWindow(c);
         c.setup("localhost", 12354);
     }
 }

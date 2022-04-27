@@ -2,7 +2,6 @@ package Server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.util.List;
 
 public class ConnectionServer implements Runnable {
 

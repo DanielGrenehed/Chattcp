@@ -24,7 +24,7 @@ public class ChattView extends JPanel implements MessageReceiver, ConnectionList
         this.client = client;
         client.addConnectionListener(this);
         console = new Console();
-        client.addObjectReceiver(new ReceiverAdapter(console));
+        client.addObjectReceiver(console);
         creator = new MessageCreator(new MessageFactory(""), this);
         field = new InputField(creator);
 

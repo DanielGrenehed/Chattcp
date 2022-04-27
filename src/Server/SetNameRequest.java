@@ -1,7 +1,5 @@
 package Server;
 
-import java.io.Serializable;
-
 public class SetNameRequest implements Request {
 
     private String name;

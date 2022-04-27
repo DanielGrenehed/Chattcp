@@ -1,6 +1,5 @@
 package Client;
 
-import Message.Message;
 import Message.MessageFactory;
 import Message.MessageReceiver;
 
