@@ -35,10 +35,10 @@ public class ConnectionServer implements Runnable {
             try {
                 handler.createConnection(socket.accept());
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                //throw new RuntimeException(e);
             }
         }
-        listener.onDisconnect(null);
+        if (listener != null) listener.onDisconnect(null);
     }
 
     public void stop() {

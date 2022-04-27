@@ -17,9 +17,7 @@ public class ObjectBuffer implements ObjectReceiver, ConnectionListener {
     }
 
     @Override
-    public void onDisconnect(Connection con) {
-
-    }
+    public void onDisconnect(Connection con) {}
 
     @Override
     public void onObjectReceived(Object o) {

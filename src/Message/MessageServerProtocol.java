@@ -18,9 +18,12 @@ public class MessageServerProtocol implements Protocol {
     public Object processInput(Object o) {
         if (o instanceof ConnectionObjectWrapper) {
             ConnectionObjectWrapper wobj = (ConnectionObjectWrapper) o;
-            if (wobj.getObject() instanceof Message) { return CompleteMessage((Message) wobj.getObject(), wobj.getConnection()); }
-            else if (wobj.getObject() instanceof String) { return new Message((String) wobj.getObject(), wobj.getConnection().getIdentifier(), new Date()); }
-            else if (wobj.getObject() instanceof SetNameRequest) {
+
+            if (wobj.getObject() instanceof Message) {
+                return CompleteMessage((Message) wobj.getObject(), wobj.getConnection());
+            } else if (wobj.getObject() instanceof String) {
+                return new Message((String) wobj.getObject(), wobj.getConnection().getIdentifier(), new Date());
+            } else if (wobj.getObject() instanceof SetNameRequest) {
                 SetNameRequest request = (SetNameRequest) wobj.getObject();
                 wobj.getConnection().setIdentifier(request.getName());
             }
